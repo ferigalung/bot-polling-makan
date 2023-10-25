@@ -7,12 +7,12 @@ RUN chmod 775 -Rf /.pm2
 RUN npm config set prefix $HOME/.npm-global
 RUN npm i -g pm2
 
-# Copy and install Node.js package requirements
-COPY package*.json ./
-RUN npm i
+WORKDIR /usr/app
+COPY ./ /usr/app
 
-# Copy project files
-COPY . .
+# Copy and install Node.js package requirements
+COPY package*.json ./usr/app
+RUN npm i
 
 # Expose application port
 EXPOSE 9000
