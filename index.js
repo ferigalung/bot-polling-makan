@@ -20,7 +20,7 @@ const commands = [
   },
   {
     command: "/maksi_2",
-    description: "Pilihan menu maksi 1",
+    description: "Pilihan menu maksi 2",
   },
 ];
 bot.setMyCommands(commands);
@@ -40,8 +40,8 @@ const sendMaksiPolling = (msg, options) => {
 // scheduling vote maksi di group sekte waw
 const rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(2, 5)];
-rule.hour = 22;
-rule.minute = 6;
+rule.hour = 10;
+rule.minute = 35;
 schedule.scheduleJob(rule, function () {
   let options = listMaksi[0];
   if (getDay(new Date()) % 2 !== 0) {
