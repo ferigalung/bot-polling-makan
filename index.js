@@ -16,11 +16,11 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, {
 const commands = [
   {
     command: "/maksi_1",
-    description: "Pilihan menu maksi 1",
+    description: listMaksi[0].join(","),
   },
   {
     command: "/maksi_2",
-    description: "Pilihan menu maksi 2",
+    description: listMaksi[1].join(","),
   },
 ];
 bot.setMyCommands(commands);
