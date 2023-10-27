@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { format, getDay } = require("date-fns");
+const { format } = require("date-fns");
 const TelegramBot = require("node-telegram-bot-api");
 const schedule = require("node-schedule");
 const listMaksi = require("./listMaksi.js");
@@ -15,13 +15,9 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, {
 // set commands
 const commands = [
   {
-    command: "/maksi_1",
-    description: listMaksi[0].join(","),
-  },
-  {
-    command: "/maksi_2",
-    description: listMaksi[1].join(","),
-  },
+    command: "/maksi",
+    description: 'Voting tempat makan siang',
+  }
 ];
 bot.setMyCommands(commands);
 
@@ -43,18 +39,10 @@ rule.dayOfWeek = [new schedule.Range(2, 5)];
 rule.hour = 3; // 3:30 US West Time -> 10:30 WIB
 rule.minute = 30;
 schedule.scheduleJob(rule, function () {
-  let options = listMaksi[0];
-  if (getDay(new Date()) % 2 !== 0) {
-    options = listMaksi[1];
-  }
-  sendMaksiPolling({ chat: { id: groupChatId }, message_thread_id: groupTopicId }, options);
+  sendMaksiPolling({ chat: { id: groupChatId }, message_thread_id: groupTopicId }, listMaksi);
 });
 
 // action commands
-bot.onText(/\/maksi_1/, (msg) => {
-  sendMaksiPolling(msg, listMaksi[0]);
-});
-
-bot.onText(/\/maksi_2/, (msg) => {
-  sendMaksiPolling(msg, listMaksi[1]);
+bot.onText(/\/maksi/, (msg) => {
+  sendMaksiPolling(msg, listMaksi);
 });
