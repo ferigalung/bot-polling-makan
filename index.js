@@ -40,14 +40,14 @@ const sendMaksiPolling = (msg, options) => {
 // scheduling vote maksi di group sekte waw
 const rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(2, 5)];
-rule.hour = 10;
-rule.minute = 35;
+rule.hour = 3; // 3:30 US West Time -> 10:30 WIB
+rule.minute = 30;
 schedule.scheduleJob(rule, function () {
   let options = listMaksi[0];
   if (getDay(new Date()) % 2 !== 0) {
     options = listMaksi[1];
   }
-  sendMaksiPolling({ chat: { id: groupChatId }, groupTopicId }, options);
+  sendMaksiPolling({ chat: { id: groupChatId }, message_thread_id: groupTopicId }, options);
 });
 
 // action commands
