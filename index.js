@@ -21,11 +21,19 @@ const commands = [
 ];
 bot.setMyCommands(commands);
 
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 const sendMaksiPolling = (msg, options) => {
   const chatId = msg.chat.id;
   const date = format(new Date(), "dd MMMM yyyy");
 
-  bot.sendPoll(chatId, `Makan Siang ${date}`, options, {
+  bot.sendPoll(chatId, `Makan Siang ${date}`, shuffleArray(options).slice(0, 5), {
     is_anonymous: false,
     allows_multiple_answers: false,
     open_period: 60 * 60, // 30 minutes
