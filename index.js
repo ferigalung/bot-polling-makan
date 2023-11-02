@@ -36,7 +36,6 @@ const sendMaksiPolling = (msg, options) => {
   bot.sendPoll(chatId, `Makan Siang ${date}`, shuffleArray(options).slice(0, 5), {
     is_anonymous: false,
     allows_multiple_answers: false,
-    open_period: 60 * 60, // 30 minutes
     message_thread_id: msg.message_thread_id,
   });
 };
