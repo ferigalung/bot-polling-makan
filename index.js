@@ -33,7 +33,7 @@ const sendMaksiPolling = (msg, options) => {
   const chatId = msg.chat.id;
   const date = format(new Date(), "dd MMMM yyyy");
 
-  bot.sendPoll(chatId, `Makan Siang ${date}`, shuffleArray(options).slice(0, 5), {
+  bot.sendPoll(chatId, `Makan Siang ${date}`, shuffleArray(options).slice(0, 8), {
     is_anonymous: false,
     allows_multiple_answers: false,
     message_thread_id: msg.message_thread_id,
