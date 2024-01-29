@@ -42,7 +42,7 @@ const sendMaksiPolling = (msg, options) => {
 
 // scheduling vote maksi di group sekte waw
 const rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [new schedule.Range(2, 5)];
+rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.hour = 3; // 3:00 US West Time -> 10:00 WIB
 rule.minute = 0;
 schedule.scheduleJob(rule, function () {
