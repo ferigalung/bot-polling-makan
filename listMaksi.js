@@ -2,7 +2,6 @@ const listMaksi = [
   "Mamamia",
   "Nyengitz",
   "JnD",
-  "Bu Tarom",
   "Sa'i",
   "Milinesia",
   "Lava",
@@ -12,7 +11,8 @@ const listMaksi = [
   "Pak Indra",
   "Mimiyo Food",
   "Masakan Padang - 082132349808",
-  "Mira Jaya - 085895900422"
+  "Mira Jaya - 085895900422",
+  "Pecel Juara - 08123040332"
 ];
 
 module.exports = listMaksi;
