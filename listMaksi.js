@@ -13,7 +13,8 @@ const listMaksi = [
   "RM Padang Salero Kampuang",
   "Mira Jaya (NasKun)",
   "Pecel Juara",
-  "Roso Sambel"
+  "Roso Sambel",
+  "Warung Kuning Timur Kantor"
 ];
 
 module.exports = listMaksi;
