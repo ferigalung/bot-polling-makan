@@ -4,7 +4,7 @@ WORKDIR /usr/app
 COPY ./ /usr/app
 
 # Copy and install Node.js package requirements
-COPY package*.json ./usr/app
+COPY package*.json /usr/app/
 RUN npm i
 
 # Expose application port
