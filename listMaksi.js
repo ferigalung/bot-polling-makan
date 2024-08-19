@@ -2,19 +2,18 @@ const listMaksi = [
   "Mamamia",
   "Nyengitz",
   "JnD",
-  "JeO",
   "WSP",
   "Sa'i",
   "Milinesia",
-  "Lava (Lama)",
-  "Yola",
+  "Juragan Mie (Lava Lama)",
+  "Yola (Lava Baru)",
   "Pak Indra",
   "Mimiyo Food",
   "RM Padang Salero Kampuang",
   "Mira Jaya (NasKun)",
   "Pecel Juara",
   "Roso Sambel",
-  "Warung Kuning Timur Kantor"
+  "Roca - Nasi Krawu"
 ];
 
 module.exports = listMaksi;
